@@ -1,0 +1,10 @@
+venv/
+venv_syscred/
+__pycache__/
+.pytest_cache/
+.env
+.DS_Store
+*.mp4
+*.mov
+*.avi
+*.zip
