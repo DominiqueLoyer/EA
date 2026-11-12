@@ -1,4 +1,11 @@
 # RFP Solution Copilot (sysCRED-Enhanced FDE Submission)
+[![sysCRED](https://img.shields.io/badge/sysCRED-Neuro--Symbolic-008080?style=for-the-badge)](https://syscred.uqam.ca/)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-Agent%20Orchestration-1C3C3C?style=for-the-badge)
+![Symbolic Validation](https://img.shields.io/badge/Validation-Symbolic%20Rules-6A1B9A?style=for-the-badge)
+![RFP Copilot](https://img.shields.io/badge/RFP-Copilot-005A9C?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)
+[![Demo Video](https://img.shields.io/badge/Demo-Video-CC0000?style=for-the-badge)](presentation/presentation.MP4)
 
 An enterprise-grade, agentic LLM application that ingests Request for Proposal (RFP) briefs and produces structured solution summaries (requirements, approach, and risk assessments) backed by neuro-symbolic validation and rigorous evaluation.
 
