@@ -8,7 +8,7 @@
 [![Demo Video](https://img.shields.io/badge/Demo-Video-CC0000?style=for-the-badge)](presentation/presentation.MP4)
 
 An enterprise-grade, agentic LLM application that ingests Request for Proposal (RFP) briefs and produces structured solution summaries (requirements, approach, and risk assessments) backed by neuro-symbolic validation and rigorous evaluation.
-
+![RTF GUI](rtf_gui.png)
 ---
 
 ## Architecture Overview
