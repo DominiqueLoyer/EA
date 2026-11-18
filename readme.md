@@ -10,7 +10,8 @@
 An enterprise-grade, agentic LLM application that ingests Request for Proposal (RFP) briefs and produces structured solution summaries (requirements, approach, and risk assessments) backed by neuro-symbolic validation and rigorous evaluation.
 
 ### The GUI that can be used with a genuine GROQ API
-![RTF GUI](rtf_gui.png)
+![RFP GUI](rfp-copilot.png)
+
 ---
 
 ## Architecture Overview
