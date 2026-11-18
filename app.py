@@ -6,6 +6,8 @@ from groq import Groq
 
 
 groq_key = os.getenv("GROQ_API_KEY")
+if groq_key:
+    groq_key = groq_key.strip().strip("'\"`")
 client = Groq(api_key=groq_key) if groq_key else None
 
 
