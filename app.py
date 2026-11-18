@@ -12,18 +12,25 @@ def repondre(message: str) -> str:
     if not groq_key:
         return "GROQ_API_KEY n'est pas définie dans le terminal."
 
-    completion = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
-        messages=[
-            {
-                "role": "system",
-                "content": "Vous êtes un assistant spécialisé dans l'analyse de demandes de propositions (RFP).",
-            },
-            {"role": "user", "content": message},
-        ],
-        temperature=0.2,
-    )
-    return completion.choices[0].message.content
+    if not message.strip():
+        return "Veuillez saisir un message RFP."
+
+    try:
+        completion = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "Vous êtes un assistant spécialisé dans l'analyse de demandes de propositions (RFP).",
+                },
+                {"role": "user", "content": message},
+            ],
+            temperature=0.2,
+        )
+        return completion.choices[0].message.content
+    except Exception as error:
+        error_name = type(error).__name__
+        return f"Erreur Groq ({error_name}) : {error}"
 
 
 demo = gr.Interface(
