@@ -16,6 +16,28 @@ def encoder_texte_ascii(message: str) -> str:
     return texte_normalise.encode("ascii", "ignore").decode("ascii")
 
 
+def obtenir_modele_disponible() -> str:
+    modeles = client.models.list()
+    identifiants = [modele.id for modele in modeles.data]
+
+    preferences = [
+        "openai/gpt-oss-20b",
+        "openai/gpt-oss-120b",
+        "qwen/qwen3-32b",
+        "llama-3.3-70b-versatile",
+        "llama-3.1-8b-instant",
+    ]
+    for preference in preferences:
+        if preference in identifiants:
+            return preference
+
+    for identifiant in identifiants:
+        if "whisper" not in identifiant.lower() and "guard" not in identifiant.lower():
+            return identifiant
+
+    raise RuntimeError("Aucun modele de chat n'est disponible pour cette cle Groq.")
+
+
 def repondre(message: str) -> str:
     if not groq_key:
         return "GROQ_API_KEY n'est pas définie dans le terminal."
@@ -25,7 +47,7 @@ def repondre(message: str) -> str:
 
     try:
         completion = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model=obtenir_modele_disponible(),
             messages=[
                 {
                     "role": "system",
