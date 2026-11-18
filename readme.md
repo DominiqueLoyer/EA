@@ -8,6 +8,8 @@
 [![Demo Video](https://img.shields.io/badge/Demo-Video-CC0000?style=for-the-badge)](presentation/presentation.MP4)
 
 An enterprise-grade, agentic LLM application that ingests Request for Proposal (RFP) briefs and produces structured solution summaries (requirements, approach, and risk assessments) backed by neuro-symbolic validation and rigorous evaluation.
+
+### The GUI that can be used with a genuine GROQ API
 ![RTF GUI](rtf_gui.png)
 ---
 
@@ -143,6 +145,8 @@ This narration script aligns strictly with the actual code behavior, clearly dis
 >
 > Thank you for your time."
 >
+> ### Results in the Terminal
+> 
 > ```bash
 > ./venv_syscred/bin/python main.py
 ✅ Clé Groq détectée avec succès.
