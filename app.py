@@ -1,4 +1,5 @@
 import os
+import unicodedata
 
 import gradio as gr
 from groq import Groq
@@ -6,6 +7,11 @@ from groq import Groq
 
 groq_key = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=groq_key) if groq_key else None
+
+
+def encoder_texte_ascii(message: str) -> str:
+    texte_normalise = unicodedata.normalize("NFKD", message)
+    return texte_normalise.encode("ascii", "ignore").decode("ascii")
 
 
 def repondre(message: str) -> str:
@@ -21,9 +27,9 @@ def repondre(message: str) -> str:
             messages=[
                 {
                     "role": "system",
-                    "content": "Vous êtes un assistant spécialisé dans l'analyse de demandes de propositions (RFP).",
+                    "content": "You are an assistant specialized in analyzing Request for Proposal documents.",
                 },
-                {"role": "user", "content": message},
+                {"role": "user", "content": encoder_texte_ascii(message)},
             ],
             temperature=0.2,
         )
