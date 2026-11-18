@@ -142,3 +142,18 @@ This narration script aligns strictly with the actual code behavior, clearly dis
 > This prototype establishes the workflow structure. The remaining work is to connect real ingestion and generation, strengthen the predicates, and demonstrate the complete system with reproducible tests.
 >
 > Thank you for your time."
+>
+> ```bash
+> ./venv_syscred/bin/python main.py
+✅ Clé Groq détectée avec succès.
+Initializing RFP Copilot Graph...
+--- [Parser Agent] Extracting sections from RFP brief ---
+--- [Requirements Analyst] Identifying mandatory compliance points ---
+--- [Solution Architect] Drafting architecture & deliverables ---
+--- [sysCRED Symbolic Engine] Running predicate rule validation ---
+--- [Router] Validation passed or limit reached. Proceeding to final output ---
+
+Final Pipeline Execution Result:
+{'raw_rfp_text': 'Sample Enterprise RFP Brief...', 'parsed_sections': {'scope': 'Digital Transformation', 'budget_cap': 'Standard'}, 'requirements': ['Must comply with GDPR data residency', 'Must support multi-tenant cloud deployment', 'Sub-second response latency for core APIs'], 'proposed_solution': {'architecture': 'Microservices on Private Cloud', 'tech_stack': ['Python', 'FastAPI', 'Supabase PostgreSQL', 'Docker'], 'compliance_checked': 'GDPR Compliant'}, 'validation_passed': True, 'feedback_notes': [], 'iteration_count': 1}
+(venv_syscred) bk280625@Sherbrooke-Informatique-Mac-2026 rfp-copilot-fde % 
+```
