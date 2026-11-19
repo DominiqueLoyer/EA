@@ -4,6 +4,11 @@ import unicodedata
 import gradio as gr
 from groq import Groq
 
+try:
+    import spaces
+except ImportError:
+    spaces = None
+
 
 groq_key = os.getenv("GROQ_API_KEY")
 if groq_key:
@@ -61,6 +66,10 @@ def repondre(message: str) -> str:
     except Exception as error:
         error_name = type(error).__name__
         return f"Erreur Groq ({error_name}) : {error}"
+
+
+if spaces is not None and hasattr(spaces, "CPU"):
+    repondre = spaces.CPU()(repondre)
 
 
 demo = gr.Interface(
