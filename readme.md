@@ -12,6 +12,9 @@ An enterprise-grade, agentic LLM application that ingests Request for Proposal (
 ### The GUI that can be used with a genuine GROQ API
 ![RFP GUI](rfp_copilot.png)
 
+### Now live on Hugging Face
+https://huggingface.co/spaces/DomLoyer/rfp-copilot
+
 ---
 
 ## Architecture Overview
